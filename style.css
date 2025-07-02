@@ -3,8 +3,11 @@ body {
     margin: 0px;
 }
 
+/*기본 레이아웃 설정*/
+
 .container {
     /*
+    웹 페이지 전체 크기의 container (스크롤바 포함)
     container의 크기를 %가 아닌 vh로 지정
     vh: 화면 기준 높이
     vw: 화면 기준 너비
@@ -19,6 +22,7 @@ body {
     flex-direction: column;
 }
 
+/*header와 main을 가로로 배치하기 위해 content에 넣어둠*/
 .content {
     display: flex;
     flex-direction: row;
@@ -34,7 +38,7 @@ body {
     width: 100%;
 
     /*border*/
-    border: solid 2px;
+    border-bottom: solid 2px;
     border-color: silver;
     
     font-size: 40px;
@@ -43,6 +47,7 @@ body {
 .main {
     /*헤더가 차지하는 부분의 나머지를 메인 영역으로 지정
     컨텐츠가 이 크기를 넘을 시 스크롤바로 제어*/
+    text-align: center;
     height: 85vh;
     overflow-y: auto;
     flex-grow: 2.5;
@@ -51,11 +56,16 @@ body {
 }
 
 .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    
     height: 85vh;
-    width: 20%;
+    width: 17%;
 
     /*border*/
-    border: solid 2px;
+    border-right: solid 2px;
     border-color: silver;
 }
 
@@ -69,6 +79,66 @@ body {
 
     /*content*/
     background-color: silver;
-    color: black;
+    color: grey;
     font-size: 15px;
+}
+
+/*지금부터 사이드바 content 요소*/
+
+/*썸네일 사진*/
+.thumbnail {
+    width: 13vw;
+    height: 13vw;
+    margin: 30px;
+    border-radius: 6.5vw;
+    overflow: hidden;
+}
+
+/*사이드바 제목*/
+.sidebar_title {
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/*사이드바 제목과 썸네일 사이에 실선 추가*/
+.border_line {
+    border: solid 2px;
+    color: silver;
+    width: 70%;
+}
+
+/*깃허브, 이메일, 전화번호 아이콘을 가로로 배치하기 위한 박스*/
+.icon_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 80%;
+    height: 10vh;
+}
+ /*아이콘들의 크기와 외형 커스텀*/
+.github-button, .mail-button, .phone-button {
+    width: 40px; 
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: o;
+}
+
+/*각 버튼들*/
+.github-button {
+    background-image: url("github-icon.png");
+    background-size: cover;
+}
+
+.mail-button {
+    background-image: url("mail-icon.png");
+    background-size: cover;
+}
+
+.phone-button {
+    background-image: url("phone-icon.png");
+    background-size: cover;
 }
