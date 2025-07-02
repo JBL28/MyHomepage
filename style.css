@@ -116,6 +116,11 @@ body {
     margin-bottom: 20px;
     width: 80%;
     height: 10vh;
+
+    @media (max-width:850px) {
+        flex-direction: column;
+        height: 25vh;
+    }
 }
  /*아이콘들의 크기와 외형 커스텀*/
 .github-button, .mail-button, .phone-button {
