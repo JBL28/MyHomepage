@@ -1,0 +1,74 @@
+body {
+    /* 기본 margin을 0으로 초기화 */
+    margin: 0px;
+}
+
+.container {
+    /*
+    container의 크기를 %가 아닌 vh로 지정
+    vh: 화면 기준 높이
+    vw: 화면 기준 너비
+
+    %를 사용할 시 부모 요소의 기준으로 계산되지만, 
+    vh/vw를 사용할 시 스크롤바를 포함한 화면의 길이를 기준으로 계산된다.
+    */
+    overflow-y: auto;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    height: 85vh;
+}
+
+.header {
+    /*layout*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    width: 100%;
+
+    /*border*/
+    border: solid 2px;
+    border-color: silver;
+    
+    font-size: 40px;
+}
+
+.main {
+    /*헤더가 차지하는 부분의 나머지를 메인 영역으로 지정
+    컨텐츠가 이 크기를 넘을 시 스크롤바로 제어*/
+    height: 85vh;
+    overflow-y: auto;
+    flex-grow: 2.5;
+    width: 80%;
+    height: 85vh;
+}
+
+.sidebar {
+    height: 85vh;
+    width: 20%;
+
+    /*border*/
+    border: solid 2px;
+    border-color: silver;
+}
+
+.footer {
+    /*layout*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    width: 100%;
+
+    /*content*/
+    background-color: silver;
+    color: black;
+    font-size: 15px;
+}
